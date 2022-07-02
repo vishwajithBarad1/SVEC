@@ -24,12 +24,9 @@
 		
 	}
 	void display(){
-		int i=front,n=len;
-		while(n){
-			printf("%d ",queue[i%6]);
-			i++;
-			n--;
-		}
+		int i;
+		for(i=front;i+1!=front;i=(i+1)%6)
+			printf("%d ",queue[i]);
 	}
 	void main(){
 		enqueue(10);
