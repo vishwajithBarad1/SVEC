@@ -17,8 +17,11 @@
 		if(len>0){
 			front=(front+1)%6;
 			len--;
+			return num;
 		}
-		return num;
+		else
+		printf("stack is empty\n");
+		
 	}
 	void display(){
 		int i=front,n=len;
