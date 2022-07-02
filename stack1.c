@@ -22,7 +22,7 @@
 		else
 			printf("stack is empty\n");
 	}
-    int isFull(){
+    	int isFull(){
     	return top==(size-1)?1:0;
 	}
 	int isEmpty(){
