@@ -2,7 +2,6 @@
 	int queue[6],len=0;
 	int front=0,rear=-1;
 	void enqueue(int num){
-		front=0;
 		if(len<6){
 			rear=(rear+1)%6;
 			queue[rear]=num;
