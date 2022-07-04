@@ -82,6 +82,17 @@
 		}
 		prev->next=curr->next;
 	}
+	void reverse(){
+		struct Node *p=NULL,*c=head,*n=head->next;
+		while(n!=NULL){
+			c->next=p;
+			p=c;
+			c=n;
+			n=c->next;
+		}
+		c->next=p;
+		head=c;
+	}
 	void main(){
 		int val,n,i,pos;
 		scanf("%d",&n);
@@ -91,14 +102,6 @@
 			addAtE(val);
 		}
 		display();
-		printf("del at pos?\n");
-		scanf("%d",&pos);
-		delAtM(pos);
+		reverse();
 		display();
 	}
-	
-	
-	
-	
-	
-	
