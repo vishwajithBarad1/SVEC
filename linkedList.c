@@ -29,21 +29,47 @@
 		}
 		else{
 			head=currNode;
+		}		
+	}
+	void addAtE(int val){
+		struct Node *temp,*newNode;
+		newNode=createNode(val);
+		if(head!=NULL){
+			temp=head;
+			while(temp->next!=NULL){
+				temp=temp->next;
+			}
+			temp->next=newNode;
 		}
-		
+		else{
+			head=newNode;
+		}
+	}
+	void addAtM(int val,int pos){
+		struct Node *temp=head,*newNode;
+		newNode=createNode(val);
+		while(--pos){
+			temp=temp->next;
+		}
+		newNode->next=temp->next;
+		temp->next=newNode;
 	}
 	void main(){
-		struct Node *n1,*n2,*n3;
-		n1=createNode(10);
-		n2=createNode(20);
-		n3=createNode(30);
-		head=n1;
-		n1->next=n2;
-		n2->next=n3;
-		display();
-		printf("this is a linked list before insertion\n");
-		addAtB(40);
-		addAtB(50);
-		addAtB(60);
+		int val,n,i,pos;
+		scanf("%d",&n);
+		for(i=0;i<n;i++){
+			val;
+			scanf("%d",&val);
+			addAtE(val);
+		}
+		printf("pos:val\n");
+		scanf("%d%d",&pos,&val);
+		addAtM(val,pos);
 		display();
 	}
+	
+	
+	
+	
+	
+	
