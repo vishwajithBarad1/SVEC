@@ -34,7 +34,12 @@ void preorder(struct Node *root){
 	preorder(root->left);
 	preorder(root->right);
 }
-
+int height(struct Node *root){
+if(root!=NULL){
+	int a=height(root->left);
+	int b=height(root->right);
+	return 1+(a>b?a:b);
+}
 void main(){
 	struct Node *n1,*n2,*n3,*n4,*n5;
 	n1=createNode(10);
@@ -52,5 +57,5 @@ void main(){
 	preorder(Root);
 	printf("\n");
 	postorder(Root);
-
+	printf("\nhight of the tree is=%d",height(Root)-1);
 }
