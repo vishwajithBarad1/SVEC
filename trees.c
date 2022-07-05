@@ -40,6 +40,27 @@ if(root!=NULL){
 	int b=height(root->right);
 	return 1+(a>b?a:b);
 }
+void BST(struct Node *root1,int value){
+	if(root1==NULL){
+		root=createNode(value);
+		return;
+	}
+	if(value<root1->data){
+		if(root1->left == NULL){
+			root1->left=createNode(value);
+		}
+		else{
+			BST(root1->left,value);
+		}
+	}
+	else{
+		if(root1->right == NULL){
+			root1->right=createNode(value);
+		}
+		else
+		BST(root1->right,value);
+	}
+}
 void main(){
 	struct Node *n1,*n2,*n3,*n4,*n5;
 	n1=createNode(10);
